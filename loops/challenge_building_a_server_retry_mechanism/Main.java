@@ -4,21 +4,19 @@ public class Main {
     public static boolean tryConnect(int successfulAttempt) {
         int retryCount = 0;
         do {
-            retryCount= retryCount + 1;
-            if(successfulAttempt==retryCount){
-                 System.out.println("Connection is successful");
+            retryCount++;
+            if (retryCount == successfulAttempt) {
+                System.out.println("Successfully connected to the server.");
                 return true;
-            }else{
-                System.out.println("Server unavailable, retrying...");
             }
-            
+            System.out.println("Server unavailable, retrying...");
         } while (retryCount < 5);
-                
+
         return false;
     }
 
     public static void main(String[] args) {
-        boolean connected = tryConnect(3); // simulate successful attempt on 3rd try
+        boolean connected = tryConnect(10); // simulate successful attempt on 3rd try
         if (!connected) {
             System.out.println("Failed to connect to the server after 5 attempts.");
         }
