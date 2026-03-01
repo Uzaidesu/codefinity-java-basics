@@ -8,7 +8,7 @@ public class Main {
         for (int i=0;i<sizeMassive;i++) {
             totalHours += workHours[i] ;
         }
-            System.out.println(totalHours/sizeMassive-1);
+            
         return totalHours/ (double) sizeMassive;
     }
     
